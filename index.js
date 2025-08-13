@@ -45,9 +45,7 @@ async function pollUpdates() {
   const res = await fetch(
     `https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?timeout=30&offset=${offset+1}`
   );
-  console.log(
-    `https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?timeout=30&offset=${offset+1}`
-  )
+  
   const data = await res.json();
   for (const update of data.result) {
     console.log("update",update.update_id)
